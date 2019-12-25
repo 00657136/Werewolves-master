@@ -8,5 +8,6 @@ target 'Werewolves' do
   # Pods for Werewolves
 	pod 'Firebase/Auth'
 	pod 'Firebase/Firestore'
-
+	pod 'FacebookLogin'
+	pod 'GoogleSignIn'
 end

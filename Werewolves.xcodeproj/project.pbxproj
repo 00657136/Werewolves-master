@@ -117,6 +117,7 @@
 				399A478C23B3470600E26965 /* Frameworks */,
 				399A478D23B3470600E26965 /* Resources */,
 				91D8048B9633C61DF821413E /* [CP] Embed Pods Frameworks */,
+				00D180270A7E4EC17E2BAE5F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +176,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00D180270A7E4EC17E2BAE5F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Werewolves/Pods-Werewolves-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Werewolves/Pods-Werewolves-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Werewolves/Pods-Werewolves-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		84A814A2EDF589F46F7FDA8E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
