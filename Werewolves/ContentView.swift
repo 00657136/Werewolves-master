@@ -17,13 +17,19 @@ struct ContentView: View {
     var body: some View {
         
         ZStack{
-            Color.init(.yellow)
+            Image("背景").resizable().scaledToFill().frame(minWidth: 0, maxWidth: .infinity)
             
-            VStack{
+            VStack(alignment: .center, spacing: 5){
+                HStack{
+                    Text("信箱")
             TextField(account, text: $account)
             .textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: UIScreen.main.bounds.width*2/3, height: 50)
+            }
+                HStack{
+                    Text("密碼")
             TextField(password, text: $password)
             .textFieldStyle(RoundedBorderTextFieldStyle()).frame(width: UIScreen.main.bounds.width*2/3, height: 50)
+            }
             Text("註冊").onTapGesture {
                 print(self.password)
                 Auth.auth().createUser(withEmail: self.account, password: self.password) { (result, error) in
@@ -60,32 +66,12 @@ struct ContentView: View {
                                            print("not login")
                                        }
                 }
-//                Text("Facebook登入").onTapGesture {
-//                    let manager = LoginManager()
-//                    manager.logIn(permissions: [.publicProfile], viewController: self) { (result) in
-//                        if case LoginResult.success(granted: _, declined: _, token: _) = result {
-//                            print("fb login ok")
-//
-//                            let credential =  FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
-//                                Auth.auth().signIn(with: credential) { [weak self] (result, error) in
-//                                guard let self = self else { return }
-//                                guard error == nil else {
-//                                    print(error?.localizedDescription)
-//                                    return
-//                                }
-//                                self.dismiss(animated: true, completion: nil)
-//                            }
-//
-//                        } else {
-//                            print("login fail")
-//                        }
-//                    }
-//                }
+
             google().frame(width: 120, height: 50)
                 facebook().frame(width: 120, height: 50)
         }
             
-        }
+        }.edgesIgnoringSafeArea(.all)
         
     }
 }

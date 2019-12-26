@@ -15,6 +15,8 @@
 		399A479F23B3470800E26965 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 399A479E23B3470800E26965 /* Preview Assets.xcassets */; };
 		399A47A223B3470800E26965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399A47A023B3470800E26965 /* LaunchScreen.storyboard */; };
 		399A47AA23B349C200E26965 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 399A47A923B349C200E26965 /* GoogleService-Info.plist */; };
+		531EFE4923B4E5830009083C /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531EFE4823B4E5830009083C /* main.storyboard */; };
+		531EFE4B23B4E6B00009083C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531EFE4A23B4E6B00009083C /* FirstViewController.swift */; };
 		D3ACFB9D539BCFBAF6E0F4A2 /* Pods_Werewolves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 641152BA57C98E907D450342 /* Pods_Werewolves.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		399A47A123B3470800E26965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		399A47A323B3470800E26965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		399A47A923B349C200E26965 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		531EFE4823B4E5830009083C /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		531EFE4A23B4E6B00009083C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		641152BA57C98E907D450342 /* Pods_Werewolves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Werewolves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF455FC3497BD3D7FD9DCDE /* Pods-Werewolves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Werewolves.release.xcconfig"; path = "Target Support Files/Pods-Werewolves/Pods-Werewolves.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +82,8 @@
 				399A479223B3470600E26965 /* AppDelegate.swift */,
 				399A479423B3470600E26965 /* SceneDelegate.swift */,
 				399A479923B3470600E26965 /* ContentView.swift */,
+				531EFE4823B4E5830009083C /* main.storyboard */,
+				531EFE4A23B4E6B00009083C /* FirstViewController.swift */,
 				399A479B23B3470800E26965 /* Assets.xcassets */,
 				399A47A023B3470800E26965 /* LaunchScreen.storyboard */,
 				399A47A323B3470800E26965 /* Info.plist */,
@@ -166,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531EFE4923B4E5830009083C /* main.storyboard in Resources */,
 				399A47A223B3470800E26965 /* LaunchScreen.storyboard in Resources */,
 				399A479F23B3470800E26965 /* Preview Assets.xcassets in Resources */,
 				399A479C23B3470800E26965 /* Assets.xcassets in Resources */,
@@ -239,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531EFE4B23B4E6B00009083C /* FirstViewController.swift in Sources */,
 				399A479323B3470600E26965 /* AppDelegate.swift in Sources */,
 				399A479523B3470600E26965 /* SceneDelegate.swift in Sources */,
 				399A479A23B3470600E26965 /* ContentView.swift in Sources */,
