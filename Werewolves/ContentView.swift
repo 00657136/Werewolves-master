@@ -14,8 +14,9 @@ import FBSDKLoginKit
 struct ContentView: View {
     @State private var account : String = ""
     @State private var password : String = ""
+    @State private var show = false
     var body: some View {
-        
+        NavigationView{
         ZStack{
             Image("背景").resizable().scaledToFill().frame(minWidth: 0, maxWidth: .infinity)
             
@@ -69,10 +70,19 @@ struct ContentView: View {
 
             google().frame(width: 120, height: 50)
                 facebook().frame(width: 120, height: 50)
+                NavigationLink(destination: ProfileView()){
+                Text("profile")
+                }
+                Button("play") {
+                    self.show = true
+                }
+                .sheet(isPresented: $show) {
+                    locationView()
+                }
         }
             
         }.edgesIgnoringSafeArea(.all)
-        
+    }
     }
 }
 

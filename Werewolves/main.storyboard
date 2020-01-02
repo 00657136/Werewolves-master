@@ -23,10 +23,40 @@
             </objects>
             <point key="canvasLocation" x="-796" y="102"/>
         </scene>
+        <!--Location View Controller-->
+        <scene sceneID="FSY-D3-503">
+            <objects>
+                <viewController storyboardIdentifier="locationViewController" id="Ff0-70-mlb" customClass="locationViewController" customModule="Werewolves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="czf-wb-vO6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cr9-gk-qTG">
+                                <rect key="frame" x="0.0" y="80" width="414" height="459"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="459" id="E9w-bN-KYW"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cr9-gk-qTG" firstAttribute="trailing" secondItem="e0c-UM-bJX" secondAttribute="trailing" id="Gy0-eh-BS4"/>
+                            <constraint firstItem="cr9-gk-qTG" firstAttribute="leading" secondItem="e0c-UM-bJX" secondAttribute="leading" id="Vez-xD-dRW"/>
+                            <constraint firstItem="cr9-gk-qTG" firstAttribute="top" secondItem="e0c-UM-bJX" secondAttribute="top" constant="36" id="nxN-v6-nSG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e0c-UM-bJX"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="cr9-gk-qTG" id="QW1-vq-7Df"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4B-9M-oNB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797.10144927536237" y="814.95535714285711"/>
+        </scene>
         <!--First View Controller-->
         <scene sceneID="0HH-gR-bRm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4MP-Ry-CrK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="av3-Ut-Zsr" customClass="FirstViewController" customModule="Werewolves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GaE-z2-vaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -36,6 +66,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="yc1-rH-Jt4"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4MP-Ry-CrK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29" y="102"/>
         </scene>
