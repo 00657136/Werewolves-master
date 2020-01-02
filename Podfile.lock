@@ -193,6 +193,9 @@ PODS:
   - Firebase/Firestore (6.13.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 1.8.0)
+  - Firebase/Storage (6.13.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.4.2)
   - FirebaseAuth (6.4.1):
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.2)
@@ -225,6 +228,10 @@ PODS:
     - "gRPC-C++ (= 0.0.9)"
     - leveldb-library (~> 1.22)
     - nanopb (~> 0.3.901)
+  - FirebaseStorage (3.4.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleDataTransport (3.2.0)
   - GoogleDataTransportCCTSupport (1.2.2):
     - GoogleDataTransport (~> 3.2)
@@ -282,6 +289,7 @@ DEPENDENCIES:
   - FacebookLogin
   - Firebase/Auth
   - Firebase/Firestore
+  - Firebase/Storage
   - GoogleSignIn
 
 SPEC REPOS:
@@ -300,6 +308,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
     - FirebaseFirestore
+    - FirebaseStorage
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleSignIn
@@ -326,6 +335,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: 511f4f3ed7d440bb69127e8b97c2bc8befae639e
   FirebaseCoreDiagnosticsInterop: e9b1b023157e3a2fc6418b5cb601e79b9af7b3a0
   FirebaseFirestore: 52120e2833f804a874ba1a9f59aab864a8ae2286
+  FirebaseStorage: 93fe2f8190a01bfb2b2c4932df7d679744c4ef1d
   GoogleDataTransport: 8e9b210c97d55fbff306cc5468ff91b9cb32dcf5
   GoogleDataTransportCCTSupport: ef79a4728b864946a8aafdbab770d5294faf3b5f
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
@@ -337,6 +347,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: eeaabaa0700ac09b338e5e57c3ba6b8f531af5d8
+PODFILE CHECKSUM: 9e2a5d38046c2827eb33aa31dffe087da0236b62
 
 COCOAPODS: 1.8.4

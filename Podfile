@@ -10,4 +10,5 @@ target 'Werewolves' do
 	pod 'Firebase/Firestore'
 	pod 'FacebookLogin'
 	pod 'GoogleSignIn'
+	pod 'Firebase/Storage'
 end
