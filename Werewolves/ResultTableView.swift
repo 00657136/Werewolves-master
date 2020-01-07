@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct ResultTableView: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ResultTableView>) -> ResultTableViewController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ResultTableView>) -> assignNavigationViewController {
         let storyboard = UIStoryboard(name: "main", bundle: nil)
-        let controller = storyboard.instantiateViewController(identifier: "ResultTableViewController") as! ResultTableViewController
+        let controller = storyboard.instantiateViewController(identifier: "assignNavigationView") as! assignNavigationViewController
         return controller
     }
     
-    func updateUIViewController(_ uiViewController: ResultTableViewController, context: UIViewControllerRepresentableContext<ResultTableView>) {
+    func updateUIViewController(_ uiViewController: assignNavigationViewController, context: UIViewControllerRepresentableContext<ResultTableView>) {
         
     }
     
