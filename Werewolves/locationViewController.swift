@@ -38,7 +38,7 @@ MKMapViewDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             
          let request = MKLocalSearch.Request()
-                request.naturalLanguageQuery = "coffee"
+                request.naturalLanguageQuery = "Restaurants"
                 request.region = MKCoordinateRegion(center: locations[0].coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                 let search = MKLocalSearch(request: request)
                  search.start { (response, error) in

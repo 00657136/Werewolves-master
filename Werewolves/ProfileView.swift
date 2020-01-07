@@ -45,12 +45,7 @@ struct ProfileView: View {
             Text("玩家名字")
         }
                 
-                Button("play") {
-                    self.show = true
-                }
-                .sheet(isPresented: $show) {
-                    locationView()
-                }
+                
                 
         }
               
