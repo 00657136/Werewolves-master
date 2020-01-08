@@ -19,6 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
+        let tabBarController = window?.rootViewController as? UITabBarController
+        var navController =  tabBarController?.viewControllers?.first as? UINavigationController
+        let controller = navController?.viewControllers.first as? ResultTableViewController
+        
+        navController = tabBarController?.viewControllers?[1] as? UINavigationController
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        controller?.container =  appDelegate?.persistentContainer
+        
         // Get the managed object context from the shared persistent container.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 

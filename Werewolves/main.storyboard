@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5tD-oE-mcD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultIdentifier" id="5tD-oE-mcD">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5tD-oE-mcD" id="Hp9-bc-UkT">
@@ -91,24 +91,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA8-0w-z8g">
-                                                    <rect key="frame" x="0.0" y="0.0" width="107" height="107"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <action selector="click:" destination="IBc-UC-wde" eventType="touchUpInside" id="iFz-TO-6gW"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="107" height="107"/>
                                         <connections>
-                                            <outlet property="cellButton" destination="FA8-0w-z8g" id="rIf-az-K6v"/>
                                             <outlet property="cellImage" destination="hoo-Aq-Mxr" id="eer-X7-qix"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="IBc-UC-wde" id="zc1-gR-I1B"/>
+                                    <outlet property="delegate" destination="IBc-UC-wde" id="a3e-8Z-KCt"/>
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gga-e4-2mQ">
@@ -118,46 +111,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzb-2v-1XO">
-                                <rect key="frame" x="20" y="597" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="選狼人"/>
-                                <connections>
-                                    <action selector="pickwolf:" destination="IBc-UC-wde" eventType="touchUpInside" id="HYs-DD-Oxg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYA-20-KOH">
-                                <rect key="frame" x="109" y="597" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="選預"/>
-                                <connections>
-                                    <action selector="pickprophet:" destination="IBc-UC-wde" eventType="touchUpInside" id="qkk-9F-fGW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMA-o4-fV3">
-                                <rect key="frame" x="255" y="597" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="選騎士"/>
-                                <connections>
-                                    <action selector="pickknight:" destination="IBc-UC-wde" eventType="touchUpInside" id="RgF-KA-Zkl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-B7-dkU">
-                                <rect key="frame" x="341" y="597" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="選平民"/>
-                                <connections>
-                                    <action selector="pickbeian:" destination="IBc-UC-wde" eventType="touchUpInside" id="1hk-vT-pfD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-et-Qd8">
-                                <rect key="frame" x="180" y="596" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="選女巫"/>
-                                <connections>
-                                    <action selector="pickwitch:" destination="IBc-UC-wde" eventType="touchUpInside" id="UGb-9U-oHh"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -167,7 +120,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xQS-et-lLe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0im-CX-rjJ"/>
+                    <navigationItem key="navigationItem" id="0im-CX-rjJ">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="8Oh-2M-okv">
+                            <connections>
+                                <action selector="done:" destination="IBc-UC-wde" id="rLZ-r6-aeo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionLayout" destination="mui-Ur-Jkn" id="SZi-Oc-HZV"/>
                         <outlet property="collectionViewControl" destination="3Up-cw-IcV" id="fPO-b1-JVc"/>
