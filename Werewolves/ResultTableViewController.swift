@@ -15,33 +15,65 @@ class ResultTableViewController: UITableViewController {
     var results = [Result]()
     
     func getResult(){
+  
         let context = container.viewContext
+
+        let request:NSFetchRequest<Result> = Result.fetchRequest()
         do {
-            results = try context.fetch(Result.fetchRequest)
+            results = try context.fetch(request)
         }
         catch {
             print("error")
         }
     }
     
+//    func getResult() {
+//        let context = container.viewContext
+//        let request:NSFetchRequest<Result> = Result.fetchRequest()
+//        request.predicate = NSPredicate(format: "singer == %@ AND star > %d", "wiz", 1)
+//        let sortDescriptor = NSSortDescriptor(key: "star", ascending: false)
+//        request.sortDescriptors = [sortDescriptor]
+//
+//        do {
+//            results = try context.fetch(request)
+//        }
+//        catch {
+//            print("error")
+//        }
+//    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        getResult()
+//        tableView.reloadData()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("3")
+//        guard container != nil else {
+//            fatalError("This view needs a persistent container.")
+//        }
+        
         getResult()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+//
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -54,6 +86,7 @@ class ResultTableViewController: UITableViewController {
 
         // Configure the cell...
 
+        cell.textLabel?.text = results[indexPath.row].identity
         return cell
     }
     
@@ -93,14 +126,27 @@ class ResultTableViewController: UITableViewController {
     }
     */
 
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+            let controller = segue.destination as? assignViewController
+            controller?.delegate = self
+            controller?.container = self.container
+        }
+        
+
     }
-    */
+
+    extension ResultTableViewController: AddResultTableViewControllerDelegate {
+        
+        func didAdd(result: Result) {
+            results.append(result)
+            tableView.reloadData()
+        }
+    
 
 }

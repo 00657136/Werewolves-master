@@ -138,9 +138,10 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
     @IBAction func done(_ sender: Any) {
         let context = container.viewContext
         let result = Result(context: context)
-        result.text = "1"
+        
+        result.identity = wolf.identity
         container.saveContext()
-        delegate?.didAdd(result: Result)
+        delegate?.didAdd(result: result)
         navigationController?.popViewController(animated: true)
     }
     /*
