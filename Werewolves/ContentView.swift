@@ -83,7 +83,7 @@ struct ContentView: View {
                 facebook().frame(width: UIScreen.main.bounds.width*2/5, height:50)
             }
                 
-                NavigationLink(destination: mainTabView()){
+                NavigationLink(destination: ProfileView()){
                 Text("profile")
                 }.accentColor(.black).frame(width: UIScreen.main.bounds.width*4/5, height:30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))

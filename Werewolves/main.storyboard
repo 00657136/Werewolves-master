@@ -33,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultIdentifier" id="5tD-oE-mcD">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultIdentifier" rowHeight="68" id="5tD-oE-mcD">
+                                <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5tD-oE-mcD" id="Hp9-bc-UkT">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -57,7 +57,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnP-04-Uds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-100" y="102"/>
+            <point key="canvasLocation" x="110" y="102"/>
         </scene>
         <!--Assign View Controller-->
         <scene sceneID="DgO-ct-h9r">
@@ -104,19 +104,36 @@
                                     <outlet property="delegate" destination="IBc-UC-wde" id="a3e-8Z-KCt"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gga-e4-2mQ">
-                                <rect key="frame" x="20" y="541" width="367" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gga-e4-2mQ">
+                                <rect key="frame" x="20" y="541" width="57" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="jH2-qR-sfH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adP-LQ-FY7">
+                                <rect key="frame" x="304" y="541" width="98" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="SwB-6E-Joq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="技能說明"/>
+                                <connections>
+                                    <segue destination="1D4-XE-DiJ" kind="show" destinationCreationSelector="TurnToRule:" id="Q1g-bu-DBH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xQS-et-lLe" firstAttribute="trailing" secondItem="3Up-cw-IcV" secondAttribute="trailing" constant="20" id="HQ2-Of-0kX"/>
                             <constraint firstItem="3Up-cw-IcV" firstAttribute="top" secondItem="xQS-et-lLe" secondAttribute="top" id="O1h-2N-wpD"/>
+                            <constraint firstItem="xQS-et-lLe" firstAttribute="trailing" secondItem="adP-LQ-FY7" secondAttribute="trailing" constant="12" id="TQX-J0-WgO"/>
+                            <constraint firstItem="gga-e4-2mQ" firstAttribute="leading" secondItem="xQS-et-lLe" secondAttribute="leading" constant="20" id="Yho-Og-iaX"/>
+                            <constraint firstItem="adP-LQ-FY7" firstAttribute="top" secondItem="3Up-cw-IcV" secondAttribute="bottom" constant="8" id="fYy-VZ-xN4"/>
                             <constraint firstItem="3Up-cw-IcV" firstAttribute="leading" secondItem="xQS-et-lLe" secondAttribute="leading" constant="20" id="fee-Bg-oCQ"/>
+                            <constraint firstItem="gga-e4-2mQ" firstAttribute="top" secondItem="3Up-cw-IcV" secondAttribute="bottom" constant="8" id="uxr-dp-4sC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xQS-et-lLe"/>
                     </view>
@@ -136,6 +153,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRY-vd-sh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015.9420289855074" y="101.78571428571428"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="RtE-VA-QCm">
+            <objects>
+                <hostingController id="1D4-XE-DiJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CAG-DK-qRV"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mh-qN-cwM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="103"/>
         </scene>
         <!--Location View Controller-->
         <scene sceneID="FSY-D3-503">

@@ -15,9 +15,11 @@ struct ProfileView: View {
     var body: some View {
         ZStack(alignment: .topLeading){
             
-            Image("wallpaper").resizable().scaledToFill().frame(minWidth: 0, maxWidth: .infinity)
-            VStack(alignment:.leading){
+            Image("").resizable().scaledToFill().frame(minWidth: 0, maxWidth: .infinity)
+            VStack(alignment:.center,spacing:50){
                 Image("").resizable().scaledToFit().frame(width:100).hidden()
+                
+                
                 HStack(alignment: .center, spacing: 30) {
             ZStack(alignment: .bottom) {
 
@@ -42,10 +44,10 @@ struct ProfileView: View {
 
             }
             }
-            Text("玩家名字")
+                    Text("玩家名字").frame(width: UIScreen.main.bounds.width - 180)
         }
                 
-                
+                Text("post文章")
                 
         }
               

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 import CoreData
 
 protocol AddResultTableViewControllerDelegate {
@@ -43,7 +44,8 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
   
         if wolf.quantity > 0 {
-            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+wolf.identity
+            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+wolf.identity+";"
+            FinalResult += playerArray[indexPath.item]
             cell.cellImage.image = UIImage(named: wolf.identity)
             procedureText.text = "請選擇\(wolf.identity)"
             wolf.quantity -= 1
@@ -53,7 +55,8 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
             }
         }
         else if prophet.quantity > 0{
-            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+prophet.identity
+            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+prophet.identity+";"
+            FinalResult += playerArray[indexPath.item]
             cell.cellImage.image = UIImage(named: prophet.identity)
             procedureText.text = "請選擇\(prophet.identity)"
             prophet.quantity -= 1
@@ -63,7 +66,8 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
             }
         }
         else if witch.quantity > 0{
-            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+witch.identity
+            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+witch.identity+";"
+            FinalResult += playerArray[indexPath.item]
             cell.cellImage.image = UIImage(named: witch.identity)
             procedureText.text = "請選擇\(witch.identity)"
             witch.quantity -= 1
@@ -73,7 +77,8 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
             }
         }
         else if knight.quantity > 0{
-            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+knight.identity
+            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+knight.identity+";"
+            FinalResult += playerArray[indexPath.item]
             cell.cellImage.image = UIImage(named: knight.identity)
             procedureText.text = "請選擇\(knight.identity)"
             knight.quantity = knight.quantity - 1
@@ -83,7 +88,8 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
             }
         }
         else if beian.quantity > 0{
-            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+beian.identity
+            playerArray[indexPath.item] = "\(indexPath.item+1)號玩家為"+beian.identity+";"
+            FinalResult += playerArray[indexPath.item]
             cell.cellImage.image = UIImage(named: beian.identity)
             procedureText.text = "請選擇\(beian.identity)"
             beian.quantity = beian.quantity - 1
@@ -95,11 +101,16 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     
 
+    @IBSegueAction func TurnToRule(_ coder: NSCoder) -> UIViewController? {
+        let view = RuleView()
+        return UIHostingController(coder: coder, rootView: view)
+    }
     
     
     @IBOutlet weak var collectionViewControl: UICollectionView!
     @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var procedureText: UILabel!
+    var FinalResult : String = ""
     var pickComplete : Bool = false
     var playerArray: [String] = ["player1","player2","player3","player4","player5","player6","player7","player8","player9"]
     struct assignRole{
@@ -136,13 +147,15 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
 
 
     @IBAction func done(_ sender: Any) {
+        if pickComplete == true {
         let context = container.viewContext
         let result = Result(context: context)
         
-        result.identity = wolf.identity
+        result.identity = FinalResult
         container.saveContext()
         delegate?.didAdd(result: result)
         navigationController?.popViewController(animated: true)
+        }
     }
     /*
     // MARK: - Navigation

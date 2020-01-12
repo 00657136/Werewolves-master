@@ -11,7 +11,7 @@ import SwiftUI
 struct mainTabView: View {
     var body: some View {
         TabView{
-            ProfileView().tabItem{
+            ContentView().tabItem{
                 Image(systemName: "person.fill")
                 Text("Profile")
             }

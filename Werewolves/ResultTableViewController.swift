@@ -49,7 +49,12 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 165
+        tableView.estimatedRowHeight = 0
 
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        container = appDelegate?.persistentContainer
         print("3")
 //        guard container != nil else {
 //            fatalError("This view needs a persistent container.")
@@ -87,6 +92,7 @@ class ResultTableViewController: UITableViewController {
         // Configure the cell...
 
         cell.textLabel?.text = results[indexPath.row].identity
+        cell.textLabel?.numberOfLines = 4
         return cell
     }
     
