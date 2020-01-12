@@ -21,7 +21,16 @@
 		5307833623C4A238004C1325 /* ResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5307833523C4A238004C1325 /* ResultTableView.swift */; };
 		5307833823C4A533004C1325 /* assignNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5307833723C4A533004C1325 /* assignNavigationViewController.swift */; };
 		531EFE4923B4E5830009083C /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531EFE4823B4E5830009083C /* main.storyboard */; };
+		534741C823CB74CE00AC0E08 /* homePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741C723CB74CE00AC0E08 /* homePageView.swift */; };
+		534741D423CBCF4500AC0E08 /* Observables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741D323CBCF4500AC0E08 /* Observables.swift */; };
+		534741D623CBD0D600AC0E08 /* TweetCellBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741D523CBD0D600AC0E08 /* TweetCellBottom.swift */; };
+		534741D823CBD12700AC0E08 /* TweetCellTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741D723CBD12700AC0E08 /* TweetCellTop.swift */; };
+		534741DA23CBD16D00AC0E08 /* TweetCellMiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741D923CBD16D00AC0E08 /* TweetCellMiddle.swift */; };
+		534741DC23CBD19D00AC0E08 /* CreateTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741DB23CBD19D00AC0E08 /* CreateTweet.swift */; };
+		534741DE23CBD1E900AC0E08 /* multilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534741DD23CBD1E900AC0E08 /* multilineTextField.swift */; };
 		537EA65F23CB3C5C00293DA4 /* RuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EA65E23CB3C5C00293DA4 /* RuleView.swift */; };
+		537EA66123CB4B4700293DA4 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EA66023CB4B4700293DA4 /* PostView.swift */; };
+		537EA66323CB703E00293DA4 /* Datatype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537EA66223CB703E00293DA4 /* Datatype.swift */; };
 		53D6961D23BDB2AF00E447E9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D6961C23BDB2AF00E447E9 /* ProfileView.swift */; };
 		53D6961F23BDB2FC00E447E9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D6961E23BDB2FC00E447E9 /* ImagePicker.swift */; };
 		53D6962123BDD1B600E447E9 /* locationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D6962023BDD1B600E447E9 /* locationViewController.swift */; };
@@ -48,7 +57,16 @@
 		5307833523C4A238004C1325 /* ResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableView.swift; sourceTree = "<group>"; };
 		5307833723C4A533004C1325 /* assignNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assignNavigationViewController.swift; sourceTree = "<group>"; };
 		531EFE4823B4E5830009083C /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
+		534741C723CB74CE00AC0E08 /* homePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homePageView.swift; sourceTree = "<group>"; };
+		534741D323CBCF4500AC0E08 /* Observables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observables.swift; sourceTree = "<group>"; };
+		534741D523CBD0D600AC0E08 /* TweetCellBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellBottom.swift; sourceTree = "<group>"; };
+		534741D723CBD12700AC0E08 /* TweetCellTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellTop.swift; sourceTree = "<group>"; };
+		534741D923CBD16D00AC0E08 /* TweetCellMiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellMiddle.swift; sourceTree = "<group>"; };
+		534741DB23CBD19D00AC0E08 /* CreateTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweet.swift; sourceTree = "<group>"; };
+		534741DD23CBD1E900AC0E08 /* multilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multilineTextField.swift; sourceTree = "<group>"; };
 		537EA65E23CB3C5C00293DA4 /* RuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleView.swift; sourceTree = "<group>"; };
+		537EA66023CB4B4700293DA4 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		537EA66223CB703E00293DA4 /* Datatype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datatype.swift; sourceTree = "<group>"; };
 		53D6961C23BDB2AF00E447E9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		53D6961E23BDB2FC00E447E9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		53D6962023BDD1B600E447E9 /* locationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +122,15 @@
 				5307832D23C47E05004C1325 /* mainTabView.swift */,
 				399A479923B3470600E26965 /* ContentView.swift */,
 				53D6961C23BDB2AF00E447E9 /* ProfileView.swift */,
+				537EA66023CB4B4700293DA4 /* PostView.swift */,
+				537EA66223CB703E00293DA4 /* Datatype.swift */,
+				534741C723CB74CE00AC0E08 /* homePageView.swift */,
+				534741DD23CBD1E900AC0E08 /* multilineTextField.swift */,
+				534741DB23CBD19D00AC0E08 /* CreateTweet.swift */,
+				534741D723CBD12700AC0E08 /* TweetCellTop.swift */,
+				534741D923CBD16D00AC0E08 /* TweetCellMiddle.swift */,
+				534741D523CBD0D600AC0E08 /* TweetCellBottom.swift */,
+				534741D323CBCF4500AC0E08 /* Observables.swift */,
 				53D6961E23BDB2FC00E447E9 /* ImagePicker.swift */,
 				53D6962023BDD1B600E447E9 /* locationViewController.swift */,
 				53D6962623BDD8AA00E447E9 /* locationView.swift */,
@@ -276,21 +303,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				534741D423CBCF4500AC0E08 /* Observables.swift in Sources */,
+				537EA66323CB703E00293DA4 /* Datatype.swift in Sources */,
 				399A479323B3470600E26965 /* AppDelegate.swift in Sources */,
 				399A479523B3470600E26965 /* SceneDelegate.swift in Sources */,
 				5307833423C48C24004C1325 /* CollectionViewCell.swift in Sources */,
+				534741DC23CBD19D00AC0E08 /* CreateTweet.swift in Sources */,
+				534741C823CB74CE00AC0E08 /* homePageView.swift in Sources */,
 				5307833023C4863A004C1325 /* ResultTableViewController.swift in Sources */,
 				53D6961F23BDB2FC00E447E9 /* ImagePicker.swift in Sources */,
 				53D6962723BDD8AA00E447E9 /* locationView.swift in Sources */,
 				5307833623C4A238004C1325 /* ResultTableView.swift in Sources */,
 				399A479A23B3470600E26965 /* ContentView.swift in Sources */,
 				53D6961D23BDB2AF00E447E9 /* ProfileView.swift in Sources */,
+				534741DA23CBD16D00AC0E08 /* TweetCellMiddle.swift in Sources */,
 				537EA65F23CB3C5C00293DA4 /* RuleView.swift in Sources */,
+				537EA66123CB4B4700293DA4 /* PostView.swift in Sources */,
 				399A479823B3470600E26965 /* Werewolves.xcdatamodeld in Sources */,
 				5307833223C48AD4004C1325 /* assignViewController.swift in Sources */,
 				5307833823C4A533004C1325 /* assignNavigationViewController.swift in Sources */,
+				534741D823CBD12700AC0E08 /* TweetCellTop.swift in Sources */,
 				53D6962123BDD1B600E447E9 /* locationViewController.swift in Sources */,
+				534741D623CBD0D600AC0E08 /* TweetCellBottom.swift in Sources */,
 				5307832E23C47E05004C1325 /* mainTabView.swift in Sources */,
+				534741DE23CBD1E900AC0E08 /* multilineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

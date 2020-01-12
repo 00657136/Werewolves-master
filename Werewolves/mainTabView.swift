@@ -19,6 +19,10 @@ struct mainTabView: View {
                 Image(systemName: "list.dash")
                 Text("Assign")
             }
+            homePageView().tabItem{
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
         }
     }
 }

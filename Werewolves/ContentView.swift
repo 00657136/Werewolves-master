@@ -48,6 +48,10 @@ struct ContentView: View {
                 }
             }.frame(width: UIScreen.main.bounds.width*1/6, height: 30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
+                   
+                    
+                    
+                    
                 Text("登入").onTapGesture {
                     Auth.auth().signIn(withEmail: self.account, password: self.password) { (result, error) in
                                 guard error == nil else {
@@ -60,6 +64,13 @@ struct ContentView: View {
                     
                 }.frame(width: UIScreen.main.bounds.width*1/6, height: 30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
+                    
+                
+                
+                
+                
+                
+                
                 Text("登出").onTapGesture {
                     do {
                        try Auth.auth().signOut()
@@ -80,13 +91,17 @@ struct ContentView: View {
             }
                 HStack(alignment: .top,spacing:30){
             google().frame(width: UIScreen.main.bounds.width*2/5, height:50)
-                facebook().frame(width: UIScreen.main.bounds.width*2/5, height:50)
+                facebook(account: account).frame(width: UIScreen.main.bounds.width*2/5, height:50)
             }
                 
-                NavigationLink(destination: ProfileView()){
+                NavigationLink(destination: ProfileView(account: account)){
                 Text("profile")
                 }.accentColor(.black).frame(width: UIScreen.main.bounds.width*4/5, height:30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
+                
+                
+                
+                
                 Button("play") {
                     self.show = true
                 }
@@ -122,7 +137,7 @@ struct google : UIViewRepresentable {
 }
 
 struct facebook : UIViewRepresentable {
-    
+    var account : String
     func makeCoordinator() -> facebook.Coordinator {
         return facebook.Coordinator()
     }
@@ -130,6 +145,7 @@ struct facebook : UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<facebook>) -> FBLoginButton {
         let button = FBLoginButton()
         button.permissions = ["email"]
+        //account = ["email"]
         button.delegate = context.coordinator
         return button
     }

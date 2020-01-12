@@ -135,7 +135,7 @@ class assignViewController: UIViewController,UICollectionViewDelegate,UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        procedureText.text = "請點選表格"
         
         
         collectionLayout.sectionInset = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)

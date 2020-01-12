@@ -11,4 +11,5 @@ target 'Werewolves' do
 	pod 'FacebookLogin'
 	pod 'GoogleSignIn'
 	pod 'Firebase/Storage'
+	pod 'SDWebImageSwiftUI'
 end

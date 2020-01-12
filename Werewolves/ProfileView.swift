@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ProfileView: View {
+    var account : String
     @State private var showSelectPhoto = false
     @State private var selectImage : UIImage?
     @State private var show = false
+    @EnvironmentObject var observedData : getData
     var body: some View {
         ZStack(alignment: .topLeading){
             
@@ -44,22 +47,44 @@ struct ProfileView: View {
 
             }
             }
-                    Text("玩家名字").frame(width: UIScreen.main.bounds.width - 180)
+                    Text(account).frame(width: UIScreen.main.bounds.width - 180,height: 100)
         }
+                NavigationLink(destination: PostView()){
+                    Text("狼人聊天室").frame(width:UIScreen.main.bounds.width - 50,height: 50).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black,lineWidth: 2))
+                }
                 
-                Text("post文章")
+                
+                
+                VStack(alignment: .leading){
+                    
+                    ForEach(0..<2){i in
+                        
+                       tweetCellTop(name: "王嘉爾", id: "@jacksonwang", pic: "https://firebasestorage.googleapis.com/v0/b/werewolves-e1f2f.appspot.com/o/jackson.jpg?alt=media&token=1531579e-1e5a-40fa-bd2f-d1fc996e9963", image: "https://firebasestorage.googleapis.com/v0/b/werewolves-e1f2f.appspot.com/o/jackson.jpg?alt=media&token=1531579e-1e5a-40fa-bd2f-d1fc996e9963", Content: "hi")
+                        
+                        
+                            
+                            tweetCellMiddle(pic: "https://firebasestorage.googleapis.com/v0/b/werewolves-e1f2f.appspot.com/o/jackson.jpg?alt=media&token=1531579e-1e5a-40fa-bd2f-d1fc996e9963").padding(.leading, 60)
+                            
+                        
+                        
+
+                        tweetCellBottom().offset(x: UIScreen.main.bounds.width / 4)
+                    }
+                }
+                
+                
                 
         }
               
         .sheet(isPresented: $showSelectPhoto) {
             ImagePicker(showSelectPhoto: self.$showSelectPhoto, selectImage: self.$selectImage)
         }
-    }.edgesIgnoringSafeArea(.all)
+        }.accentColor(.black).edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(account : "玩家ID")
     }
 }
