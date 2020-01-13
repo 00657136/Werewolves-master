@@ -15,20 +15,13 @@ struct homePageView : View {
     @EnvironmentObject var observedData : getData
     
     var body : some View{
-        VStack{
+        ZStack{
    
-            Button(action: {
-                
-                self.show.toggle()
-                
-            }) {
-                Text("貼文")
-                Image("pencil").renderingMode(.original).resizable().frame(width: 50, height: 50).padding()
-            }
+            
             
         NavigationView{
                 
-                ScrollView(.vertical, showsIndicators: false) {
+                ScrollView(.vertical, showsIndicators: true) {
                     
                     VStack(alignment: .leading){
                         
@@ -47,7 +40,7 @@ struct homePageView : View {
                         }
                     }
                     
-                }.padding(.bottom, 15)
+                }
 
             .navigationBarTitle("Home",displayMode: .inline)
 //            .navigationBarItems(leading:
@@ -61,13 +54,26 @@ struct homePageView : View {
         }
             
                         
-                        
-                        
-                        
-                    }.sheet(isPresented: $show) {
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                Button(action: {
+                    
+                    self.show.toggle()
+                    
+                }) {
+                    //Text("貼文")
+                    Image("pencil").renderingMode(.original).resizable().frame(width: 50, height: 50).padding()
+                    }.padding()
+                }.padding(.bottom,65)
+            }.sheet(isPresented: $show) {
                 
                 CreateTweet(show: self.$show)
             }
+                        
+                        
+                    }
     }
         
     

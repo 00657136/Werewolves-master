@@ -18,24 +18,21 @@ struct tweetCellTop : View {
     var Content = ""
     
     var body : some View{
-        
+        VStack(alignment: .leading){
         HStack(alignment: .top){
-            
-            VStack{
-                
-                AnimatedImage(url: URL(string: image)!).resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
 
-            }
+                AnimatedImage(url: URL(string: image)).resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
 
-            
             VStack(alignment: .leading){
                 
                 Text(name).fontWeight(.heavy)
-                Text(id)
-                Text(Content).padding(.top, 8)
+                Text(id).underline()
+                //Text(Content).padding(.top, 20)
                 
             }
             
+        }
+            Text(Content).fontWeight(.medium).padding(.top, 20).offset(x:70)
         }.padding()
     }
 }

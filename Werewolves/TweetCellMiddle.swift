@@ -15,6 +15,6 @@ struct tweetCellMiddle : View {
     
     var body : some View{
         
-        AnimatedImage(url: URL(string: pic)!).resizable().scaledToFill().frame(height: 300).cornerRadius(20).padding()
+        AnimatedImage(url: URL(string: pic)!).resizable().scaledToFill().frame(width:UIScreen.main.bounds.width*4/5,height: 300).cornerRadius(20).padding()
     }
 }

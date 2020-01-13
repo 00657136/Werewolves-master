@@ -7,10 +7,14 @@
 //
 
 import SwiftUI
+import Firebase
+import SDWebImageSwiftUI
 
 struct mainTabView: View {
+    //@State var show = false
     let observedData = getData()
     var body: some View {
+        
         return TabView{
             ContentView().tabItem{
                 Image(systemName: "person.fill")
@@ -24,7 +28,13 @@ struct mainTabView: View {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
-        }.environmentObject(observedData)
+        }.edgesIgnoringSafeArea(.top).environmentObject(observedData)
+       
+
+    
+
+        
+        
     }
 }
 
