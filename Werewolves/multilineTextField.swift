@@ -22,7 +22,7 @@ struct multilineTextField : UIViewRepresentable {
         let text = UITextView()
         text.isEditable = true
         text.isUserInteractionEnabled = true
-        text.text = "Type Something"
+        text.text = "在想些什麼？"
         text.textColor = .gray
         text.font = .systemFont(ofSize: 20)
         text.delegate = context.coordinator

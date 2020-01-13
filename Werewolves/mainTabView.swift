@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct mainTabView: View {
+    let observedData = getData()
     var body: some View {
-        TabView{
+        return TabView{
             ContentView().tabItem{
                 Image(systemName: "person.fill")
                 Text("Profile")
@@ -23,12 +24,12 @@ struct mainTabView: View {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
-        }
+        }.environmentObject(observedData)
     }
 }
 
 struct mainTabView_Previews: PreviewProvider {
     static var previews: some View {
-        mainTabView()
+        mainTabView().environmentObject(getData())
     }
 }

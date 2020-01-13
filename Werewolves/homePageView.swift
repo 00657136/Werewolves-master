@@ -8,8 +8,6 @@
 
 import SwiftUI
 import Firebase
-import FirebaseStorage
-import FirebaseFirestore
 import SDWebImageSwiftUI
 
 struct homePageView : View {
@@ -18,6 +16,16 @@ struct homePageView : View {
     
     var body : some View{
         VStack{
+   
+            Button(action: {
+                
+                self.show.toggle()
+                
+            }) {
+                Text("貼文")
+                Image("pencil").renderingMode(.original).resizable().frame(width: 50, height: 50).padding()
+            }
+            
         NavigationView{
                 
                 ScrollView(.vertical, showsIndicators: false) {
@@ -42,26 +50,18 @@ struct homePageView : View {
                 }.padding(.bottom, 15)
 
             .navigationBarTitle("Home",displayMode: .inline)
-            .navigationBarItems(leading:
-            
-                Image("User Image").resizable().frame(width: 35, height: 35).clipShape(Circle()).onTapGesture {
-                    
-                    print("slide out menu ....")
-                }
-            
-            )
+//            .navigationBarItems(leading:
+//
+//                Image("User Image").resizable().frame(width: 35, height: 35).clipShape(Circle()).onTapGesture {
+//
+//                    print("slide out menu ....")
+//                }
+//
+//            )
         }
             
                         
-                        Button(action: {
-                            
-                            self.show.toggle()
-                            
-                        }) {
-                            
-                            Image("pencil").resizable().frame(width: 20, height: 20).padding()
-                        }
-                        .foregroundColor(.white)
+                        
                         
                         
                     }.sheet(isPresented: $show) {
@@ -73,9 +73,11 @@ struct homePageView : View {
     
 }
 
+
+
 struct homePageView_Previews: PreviewProvider {
     static var previews: some View {
-        homePageView()
+        homePageView().environmentObject(getData())
     }
 }
 

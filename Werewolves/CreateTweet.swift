@@ -8,13 +8,12 @@
 
 import SwiftUI
 import Firebase
-import FirebaseStorage
-import FirebaseFirestore
+
 
 struct CreateTweet : View {
     @Binding var show : Bool
     @State var txt = ""
-
+    @State private var mapshow = false
     var body : some View{
 
         VStack{
@@ -32,6 +31,17 @@ struct CreateTweet : View {
                 
                 Spacer()
                 
+                Button("打卡") {
+                                   self.mapshow = true
+                               }
+                               .sheet(isPresented: $mapshow) {
+                                   locationView()
+                               }
+                               
+                
+                
+                Spacer()
+                
                 Button(action: {
                     
                     
@@ -40,10 +50,10 @@ struct CreateTweet : View {
                     
                 }) {
                     
-                    Text("Content").padding()
+                    Text("完成").padding()
                     
-                }.background(Color("bg"))
-                .foregroundColor(.white)
+                }
+                .foregroundColor(.blue)
                 .clipShape(Capsule())
             }
             

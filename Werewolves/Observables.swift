@@ -5,11 +5,10 @@
 //  Created by User09 on 2020/1/13.
 //  Copyright © 2020 Claudio. All rights reserved.
 //
-
+import Foundation
 import SwiftUI
 import Firebase
-import FirebaseStorage
-import FirebaseFirestore
+
 
 class getData : ObservableObject{
     
@@ -29,7 +28,7 @@ class getData : ObservableObject{
             }
             
             for i in snap!.documentChanges{
-                
+                print("h")
                 if i.type == .added{
                     
                     print("hello world")
