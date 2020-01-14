@@ -26,13 +26,16 @@ struct tweetCellTop : View {
             VStack(alignment: .leading){
                 
                 Text(name).fontWeight(.heavy)
-                Text(id).underline()
+                Text(id).foregroundColor(Color.gray).underline()
                 //Text(Content).padding(.top, 20)
                 
             }
             
         }
-            Text(Content).fontWeight(.medium).padding(.top, 20).offset(x:70)
+            
+            Text(Content).fontWeight(.medium)
+        
+                .frame(width: UIScreen.main.bounds.width*2/3).padding(.top, 20).offset(x:70)
         }.padding()
     }
 }

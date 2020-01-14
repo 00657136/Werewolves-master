@@ -10,9 +10,13 @@ import UIKit
 import CoreLocation
 import MapKit
 import SafariServices
+import QuickLook
 
 class locationViewController: UIViewController , CLLocationManagerDelegate,
 MKMapViewDelegate{
+    
+    lazy var previewItem = NSURL()
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
@@ -119,5 +123,30 @@ MKMapViewDelegate{
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func PDF(_ sender: Any) {
+        let previewController = QLPreviewController()
+        self.previewItem = self.getPreviewItem(withName: "thunder.pdf")
+        
+        previewController.dataSource = self
+        self.present(previewController, animated: true, completion: nil)
+    }
+    func getPreviewItem(withName name: String) -> NSURL{
+        let file = name.components(separatedBy: ".")
+        let path = Bundle.main.path(forResource: file.first!, ofType: file.last!)
+        let url = NSURL(fileURLWithPath: path!)
+        
+        return url
+    }
+    
+}
 
+extension locationViewController: QLPreviewControllerDataSource {
+    func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
+        return 1
+    }
+    
+    func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
+        
+        return self.previewItem as QLPreviewItem
+    }
 }

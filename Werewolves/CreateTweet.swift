@@ -13,7 +13,6 @@ import Firebase
 struct CreateTweet : View {
     @Binding var show : Bool
     @State var txt = ""
-    @State private var mapshow = false
     @State var picker = false
     @State var picData : Data = .init(count: 0)
     @State var loading = false
@@ -34,12 +33,7 @@ struct CreateTweet : View {
                 
                 Spacer()
                 
-//                Button("打卡") {
-//                                   self.mapshow = true
-//                               }
-//                               .sheet(isPresented: $mapshow) {
-//                                   locationView()
-//                               }
+                
                                
                 
                 

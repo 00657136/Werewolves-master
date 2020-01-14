@@ -178,10 +178,23 @@
                                     <constraint firstAttribute="height" constant="459" id="E9w-bN-KYW"/>
                                 </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOn-jM-FQd">
+                                <rect key="frame" x="152" y="569" width="110" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="8I6-7K-Oxs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="預覽檔案"/>
+                                <connections>
+                                    <action selector="PDF:" destination="Ff0-70-mlb" eventType="touchUpInside" id="wFv-ue-2dN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="cr9-gk-qTG" firstAttribute="trailing" secondItem="e0c-UM-bJX" secondAttribute="trailing" id="Gy0-eh-BS4"/>
+                            <constraint firstItem="nOn-jM-FQd" firstAttribute="top" secondItem="cr9-gk-qTG" secondAttribute="bottom" constant="30" id="RIM-1n-l7u"/>
+                            <constraint firstItem="nOn-jM-FQd" firstAttribute="leading" secondItem="e0c-UM-bJX" secondAttribute="leading" constant="152" id="STv-nF-JyZ"/>
                             <constraint firstItem="cr9-gk-qTG" firstAttribute="leading" secondItem="e0c-UM-bJX" secondAttribute="leading" id="Vez-xD-dRW"/>
                             <constraint firstItem="cr9-gk-qTG" firstAttribute="top" secondItem="e0c-UM-bJX" secondAttribute="top" constant="36" id="nxN-v6-nSG"/>
                         </constraints>

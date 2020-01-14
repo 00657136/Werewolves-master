@@ -9,10 +9,18 @@
 import SwiftUI
 
 struct PostView: View {
-    
+    @State private var mapshow = false
     var name = ""
     var body: some View {
-        Text(name).navigationBarTitle("狼人溝通區",displayMode: .large)
+        VStack{
+        Text("").navigationBarTitle("剩餘的功能",displayMode: .large)
+            Button("打卡") {
+                self.mapshow = true
+            }
+            .sheet(isPresented: $mapshow) {
+                locationView()
+            }
+        }
     }
 }
 

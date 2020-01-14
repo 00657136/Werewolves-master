@@ -17,8 +17,22 @@ struct homePageView : View {
     var body : some View{
         ZStack{
    
+            VStack(alignment:.leading){
             
-            
+                HStack(alignment: .top){
+
+                        AnimatedImage(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/werewolves-e1f2f.appspot.com/o/jackson.jpg?alt=media&token=1531579e-1e5a-40fa-bd2f-d1fc996e9963")).resizable().scaledToFill().frame(width: 50, height: 50).clipShape(Circle())
+
+                    VStack(alignment: .leading){
+                        
+                        Text("王嘉爾").fontWeight(.heavy)
+                        Text("@jacksonWang").foregroundColor(Color.gray).underline()
+                        //Text(Content).padding(.top, 20)
+                        
+                    }
+                    
+                }.padding()
+                
         NavigationView{
                 
                 ScrollView(.vertical, showsIndicators: true) {
@@ -42,7 +56,7 @@ struct homePageView : View {
                     
                 }
 
-            .navigationBarTitle("Home",displayMode: .inline)
+            .navigationBarTitle("動態",displayMode: .inline)
 //            .navigationBarItems(leading:
 //
 //                Image("User Image").resizable().frame(width: 35, height: 35).clipShape(Circle()).onTapGesture {
@@ -53,6 +67,7 @@ struct homePageView : View {
 //            )
         }
             
+        }
                         
             VStack{
                 Spacer()

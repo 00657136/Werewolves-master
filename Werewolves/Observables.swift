@@ -13,7 +13,7 @@ import Firebase
 class getData : ObservableObject{
     
     @Published var datas = [Datatype]()
-    //@Published var top = [Topdatatype]()
+
     
     init() {
         
@@ -60,8 +60,7 @@ class getData : ObservableObject{
 func postTweet(Content : String,pic: String){
     
     let db = Firestore.firestore()
-    
-    // I'm going to use default name and image url.....
+
     
     db.collection("post").document().setData(["name" : "王嘉爾","id":"@jacksonWang","Content":Content,"reply":"0","likes":"0","pic":pic,"url":"https://firebasestorage.googleapis.com/v0/b/werewolves-e1f2f.appspot.com/o/jackson.jpg?alt=media&token=1531579e-1e5a-40fa-bd2f-d1fc996e9963"]) { (err) in
         

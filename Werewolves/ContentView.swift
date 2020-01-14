@@ -14,7 +14,10 @@ import FBSDKLoginKit
 struct ContentView: View {
     @State private var account : String = ""
     @State private var password : String = ""
-    
+    @State var showAlert = false
+    @State var showAlert1 = false
+    @State var yesORnot = false
+    @State var trueORfalse = false
     var body: some View {
         NavigationView{
         ZStack{
@@ -41,14 +44,26 @@ struct ContentView: View {
                 Auth.auth().createUser(withEmail: self.account, password: self.password) { (result, error) in
                             
                      guard let user = result?.user, error == nil else {
+                        self.showAlert1 = true
+                        self.trueORfalse = false
                          print(error?.localizedDescription)
                          return
                      }
+                    self.showAlert1 = true
+                    self.trueORfalse = true
                      print(user.email)
                 }
             }.frame(width: UIScreen.main.bounds.width*1/6, height: 30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
             .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
-                   
+                .alert(isPresented: self.$showAlert1) { () -> Alert in
+                    if self.trueORfalse == true {
+                    return Alert(title: Text("註冊成功"), dismissButton: .default(Text("我知道了")))
+                        }
+                        else  {
+                            return Alert(title: Text("此信箱已註冊"), dismissButton: .default(Text("我知道了")))
+                        }
+                
+                }
                     
                     
                     
@@ -81,12 +96,25 @@ struct ContentView: View {
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
                 Text("是否登入").onTapGesture {
                      if let user = Auth.auth().currentUser {
+                        self.showAlert = true
+                        self.yesORnot = true
                                            print("\(user.email) login")
                                        } else {
+                        self.showAlert = true
+                        self.yesORnot = false
                                            print("not login")
                                        }
                 }.frame(width: UIScreen.main.bounds.width*1/5, height:30).padding(5).background(LinearGradient(gradient: Gradient(colors: [Color.init(red: 144/255, green: 247/255, blue: 136/255), Color.init(red: 50/255, green: 204/255, blue: 188/255)]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0.5, y: 1))).cornerRadius(5)
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 2))
+                    .alert(isPresented: self.$showAlert) { () -> Alert in
+                        if self.yesORnot == true {
+                    return Alert(title: Text("已登入"), dismissButton: .default(Text("我知道了")))
+                        }
+                        else {
+                            return Alert(title: Text("未登入"), dismissButton: .default(Text("我知道了")))
+                        }
+                    }
+                    
 
             }
                 HStack(alignment: .top,spacing:30){

@@ -50,7 +50,7 @@ struct ProfileView: View {
                     Text(account).frame(width: UIScreen.main.bounds.width - 180,height: 100)
         }
                 NavigationLink(destination: PostView()){
-                    Text("狼人聊天室").frame(width:UIScreen.main.bounds.width - 50,height: 50).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black,lineWidth: 2))
+                    Text("剩餘的功能").frame(width:UIScreen.main.bounds.width - 50,height: 50).overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.black,lineWidth: 2))
                 }
                 
                 
